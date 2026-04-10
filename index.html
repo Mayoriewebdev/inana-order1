@@ -9,123 +9,89 @@
     <!-- LINK CSS -->
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+    
 </head>
 
 <body>
 
 
-    <section class="order-section">
+   <section class="order-section">
 
-        <div class="order-container">
+  <!-- LOGO -->
+  <div class="logo" data-aos="fade-down">
+    <img src="images/Logo.png" alt="Logo">
+  </div>
 
-            <!-- Logo -->
-            <div class="logo">
-                <a href="">
-                    <img src="images/logo.png" alt="Inana Food">
-                </a>
-            </div>
+  <!-- HEADER IMAGE -->
+  <div class="order-header" data-aos="fade-up" data-aos-delay="200">
+    <img src="images/Your order text.png" alt="Header">
+  </div>
 
-            <!-- Steps -->
-            <div class="steps">
+  <!-- STEPS -->
+  <div class="steps" data-aos="zoom-in" data-aos-delay="300">
+    <div class="step active">1</div>
+    <div class="line active"></div>
+    <div class="step">2</div>
+    <div class="line"></div>
+    <div class="step">3</div>
+  </div>
 
-                <div class="step">1</div>
+  <!-- PRODUCTS -->
+  <div class="products">
 
-                <div class="step-line"></div>
+    <!-- PRODUCT 1 -->
+    <div class="product-card active" onclick="selectProduct(this)" 
+         data-aos="fade-up" data-aos-delay="400">
 
-                <div class="step active">2</div>
+      <div class="product-info">
+        <img src="images/Inana mayo tex.png" class="title-img">
+        <img src="images/From.png" class="price-img">
+      </div>
 
-                <div class="step-line"></div>
+      <div class="radio active"></div>
+    </div>
 
-                <div class="step">3</div>
+    <!-- PRODUCT 2 -->
+    <div class="product-card" onclick="selectProduct(this)" 
+         data-aos="fade-up" data-aos-delay="500">
 
-            </div>
+      <div class="product-info">
+        <img src="images/Pure oil.png" class="title-imgs">
+        <img src="images/From 18,000.png" class="price-img">
+      </div>
 
-            <!-- Title -->
-            <div class="title-box">
+      <div class="radio"></div>
+    </div>
 
-                <a href="">
-                    <img src="images/Choose.png" class="title-img">
-                </a>
+  </div>
 
-                <a href="">
-                    <img src="images/Min carton.png" class="subtitle-img">
-                </a>
+</section>
 
-            </div>
 
-            <!-- Products -->
-            <div class="product-grid">
-
-                <div class="product-card">
-                    <!-- <a href=""> -->
-                        <img src="images/5g.png" class="product-img">
-                    </a>
-                </div>
-
-                <div class="product-card active">
-                    <!-- <a href=""> -->
-                        <img src="images/30g.png" class="product-img">
-                    </a>
-                </div>
-
-                <div class="product-card">
-                    <!-- <a href=""> -->
-                        <img src="images/100g.png" class="product-img">
-                    </a>
-                </div>
-
-                <div class="product-card">
-                    <!-- <a href=""> -->
-                        <img src="images/300g.png" class="product-img">
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Bottom Section -->
-            <div class="bottom-section">
-
-                <div class="total-price">
-                    <a href="">
-                        <img src="images/total text.png" class="total-img">
-                    </a>
-                </div>
-
-                <a href="" class="proceed-btn">
-                    <img src="images/proceed.png" class="btn-img">
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 
 
 
 
+<script>
+function selectProduct(card) {
+  // remove active from all
+  document.querySelectorAll(".product-card").forEach(c => {
+    c.classList.remove("active");
+    c.querySelector(".radio").classList.remove("active");
+  });
 
-
-    <script>
-
-        const cards = document.querySelectorAll(".product-card");
-
-        cards.forEach(card => {
-            card.addEventListener("click", () => {
-
-                cards.forEach(c => {
-                    c.classList.remove("active");
-                });
-
-                card.classList.add("active");
-
-            });
-        });
-
-    </script>
-
-
+  // activate clicked
+  card.classList.add("active");
+  card.querySelector(".radio").classList.add("active");
+}
+</script>
 
 
 
