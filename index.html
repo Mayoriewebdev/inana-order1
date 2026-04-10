@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inana Food Company</title>
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <section class="order-section">
+
+        <div class="order-container">
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="">
+                    <img src="images/logo.png" alt="Inana Food">
+                </a>
+            </div>
+
+            <!-- Steps -->
+            <div class="steps">
+
+                <div class="step">1</div>
+
+                <div class="step-line"></div>
+
+                <div class="step active">2</div>
+
+                <div class="step-line"></div>
+
+                <div class="step">3</div>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title-box">
+
+                <a href="">
+                    <img src="images/Choose.png" class="title-img">
+                </a>
+
+                <a href="">
+                    <img src="images/Min carton.png" class="subtitle-img">
+                </a>
+
+            </div>
+
+            <!-- Products -->
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <!-- <a href=""> -->
+                        <img src="images/5g.png" class="product-img">
+                    </a>
+                </div>
+
+                <div class="product-card active">
+                    <!-- <a href=""> -->
+                        <img src="images/30g.png" class="product-img">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <!-- <a href=""> -->
+                        <img src="images/100g.png" class="product-img">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <!-- <a href=""> -->
+                        <img src="images/300g.png" class="product-img">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+
+                <div class="total-price">
+                    <a href="">
+                        <img src="images/total text.png" class="total-img">
+                    </a>
+                </div>
+
+                <a href="" class="proceed-btn">
+                    <img src="images/proceed.png" class="btn-img">
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <script>
+
+        const cards = document.querySelectorAll(".product-card");
+
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+
+                cards.forEach(c => {
+                    c.classList.remove("active");
+                });
+
+                card.classList.add("active");
+
+            });
+        });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
